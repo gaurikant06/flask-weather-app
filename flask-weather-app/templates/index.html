@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Widget</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div>
+    <form  method="post">
+     <div class="search-container">
+    <input type="text" name="city" class="weather-search" placeholder="Search location...">
+  </div>
+ 
+  </form>
+{% if weather %}
+<div class="weather-widget">
+    <div class="weather-item">
+        <div class="weather-icon">
+            <div class="sun-icon"></div>
+        </div>
+        <div class="weather-label"></div>
+        <div class="temperature">{{ weather.temp }}°C</div>
+    </div>
+    
+    <div class="weather-item">
+        <div class="weather-icon">
+            <div class="cloud-icon"></div>
+        </div>
+        <div class="weather-label"></div>
+        <div class="temperature">{{ weather.condition }} </div>
+    </div>
+ {% endif %}
+</div>
+</div>
+<br>
+    {% if error %}
+        <p style="color:red">{{ error }}</p>
+    {% endif %}
+</body>
+</html>

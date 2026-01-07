@@ -1,0 +1,6 @@
+pip install flask
+pip install requests
+
+--This project uses the OpenWeatherMap API to fetch real-time weather data. You need to create a free 
+account on the OpenWeatherMap website and generate your own API key to run this application.
+
