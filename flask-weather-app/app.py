@@ -4,7 +4,7 @@ from flask import Flask, request, render_template
 app = Flask(__name__)
 
 def get_weather(city):
-    API_KEY = "Insert API KEY"
+    API_KEY = "Your_API_KEY_HERE"
     URL = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
     response = requests.get(URL)
     return response.json()
@@ -32,4 +32,5 @@ def hello():
 
 
 if __name__ == '__main__':
+
     app.run(debug = True, port=8000)
